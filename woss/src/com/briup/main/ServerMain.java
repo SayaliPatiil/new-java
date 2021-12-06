@@ -10,9 +10,16 @@ import com.briup.server.Server;
  * 服务器启动
  * */
 public class ServerMain {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args)  
+	{
+		try{
 		ConfigurationImp cfig = new ConfigurationImp();
 		Server server = cfig.getServer();
 		server.revicer();
+		}
+		catch(Exception e)
+		{
+			logger.info("exception handled")
+		}
 	}	
 }
