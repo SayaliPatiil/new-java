@@ -16,10 +16,16 @@ import com.briup.common.imp.ConfigurationImp;
  * 客户端启动
  * */
 public class ClientMain {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
+		try{
 		Configuration cfig = new ConfigurationImp();
 		Client client = cfig.getClient();
 		Gather gather = cfig.getGather();
 		client.send(gather.gather());
+		}
+		catch(Exception e)
+		{
+			logger.info("exception handled")
+		}
 	}
 }
