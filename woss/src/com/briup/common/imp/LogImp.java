@@ -20,7 +20,7 @@ public class LogImp implements Log,ConfigurationAWare{
 	@Override
 	public void init(Properties properties) {
 		//读取配置
-		System.out.println(properties);
+		logger.info(properties);
 		logPropertiesLocation = properties.getProperty("logPropertiesLocation");
 		serverLoggerName = properties.getProperty("serverLoggerName");
 		clientLoggerName = properties.getProperty("clientLoggerName");
@@ -28,7 +28,7 @@ public class LogImp implements Log,ConfigurationAWare{
 		try {
 			properties.load(new FileReader(logPropertiesLocation));
 			PropertyConfigurator.configure(properties);
-			System.out.println(properties);
+			logger.info(properties);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
